@@ -1,0 +1,37 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: CI
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ '**' ]
+
+jobs:
+  build:
+    if: ${{ github.event_name == 'push' || github.base_ref == 'master' || github.base_ref == 'develop' || !contains(github.event.pull_request.labels.*.name, 'skip-ci') }}
+    runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:24
+        options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: Docker Info
+        run: docker info
+      - name: Restore
+        run: dotnet restore Ark.Alliance.Core.Mediator.sln
+      - name: Format Check
+        run: dotnet format --no-restore --verify-no-changes
+      - name: Test
+        run: |
+          dotnet test Ark.Alliance.Core.Mediator.sln --no-build --configuration Release || {
+            echo "Tests failed. Listing running containers for diagnostics:";
+            docker ps -a;
+            exit 1;
+          }
