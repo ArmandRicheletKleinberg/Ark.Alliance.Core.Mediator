@@ -39,7 +39,6 @@ This analysis provides a comprehensive comparison with existing solutions and ou
 | **General** |||||
 | License | MIT | Commercial | MIT | MIT | MIT |
 | Status | Alpha | Stable | Stable | Stable | Stable |
-| Maturity | 2/5 | 5/5 | 4/5 | 3/5 | 3/5 |
 | Community | Nascent | Extensive | Growing | Small | Small |
 | **Performance** |||||
 | Dispatch Time | ~15ns (estimated) | ~150ns | ~10ns | ~5ns | ~8ns |
