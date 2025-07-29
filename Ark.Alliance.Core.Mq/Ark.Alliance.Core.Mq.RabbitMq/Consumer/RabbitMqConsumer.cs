@@ -1,10 +1,9 @@
-using System.Diagnostics;
-using System.Text.Json;
+using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
+using System.Diagnostics;
+using System.Text.Json;
 
 
 namespace Ark.Alliance.Core.Mq.RabbitMq;

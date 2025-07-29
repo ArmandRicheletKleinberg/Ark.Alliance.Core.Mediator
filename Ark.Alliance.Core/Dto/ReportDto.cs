@@ -17,7 +17,7 @@
         /// The description of the method.
         /// </summary>
         public string Description { get; set; }
-        
+
         #endregion Properties (Public)
     }
 }

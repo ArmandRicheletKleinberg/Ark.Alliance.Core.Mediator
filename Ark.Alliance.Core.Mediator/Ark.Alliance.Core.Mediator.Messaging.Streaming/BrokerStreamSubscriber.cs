@@ -1,9 +1,6 @@
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Channels;
-using System.Runtime.CompilerServices;
 using Ark.Alliance.Core.Mediator.Messaging.Abstractions;
+using System.Runtime.CompilerServices;
+using System.Threading.Channels;
 namespace Ark.Alliance.Core.Mediator.Messaging.Streaming;
 
 /// <summary>
@@ -39,7 +36,8 @@ public class BrokerStreamSubscriber<T> : IStreamSubscriber<T> where T : class
 
     public async IAsyncEnumerable<T> ConsumeAsync(string topic, [EnumeratorCancellation] CancellationToken ct)
     {
-        _ = _consumer.SubscribeAsync<T>((msg, meta) => {
+        _ = _consumer.SubscribeAsync<T>((msg, meta) =>
+        {
             _channel.Writer.TryWrite(msg);
             return Task.CompletedTask;
         }, ct);

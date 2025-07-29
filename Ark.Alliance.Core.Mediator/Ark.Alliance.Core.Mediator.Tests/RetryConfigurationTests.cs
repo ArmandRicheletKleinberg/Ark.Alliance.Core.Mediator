@@ -1,13 +1,9 @@
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Xunit;
+using Ark.Alliance.Core;
 using Ark.Alliance.Core.Mediator.IoC;
 using Ark.Alliance.Core.Mediator.Messaging;
-using Ark.Alliance.Core;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Xunit;
 
 /// <summary>
 /// Ensures retry middleware can be configured via <c>Ark:Messaging</c>.

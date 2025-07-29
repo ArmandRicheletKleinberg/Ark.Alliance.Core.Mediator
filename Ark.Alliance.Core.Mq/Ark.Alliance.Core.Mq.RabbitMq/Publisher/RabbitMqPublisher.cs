@@ -1,16 +1,12 @@
-using System;
-using System.Text;
-using System.Text.Json;
-using System.Diagnostics;
-using System.Threading.RateLimiting;
-using System.Threading;
-using System.Threading.Tasks;
+using Ark.Alliance.Core.Mediator.Messaging.Abstractions;
+using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Resilience;
-using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
-using Ark.Alliance.Core;
-using Ark.Alliance.Core.Mediator.Messaging.Abstractions;
+using System.Diagnostics;
+using System.Text;
+using System.Text.Json;
+using System.Threading.RateLimiting;
 
 
 namespace Ark.Alliance.Core.Mq.RabbitMq;
@@ -133,7 +129,7 @@ public class RabbitMqPublisher : IBrokerProducer
 
                 var elapsed = (Stopwatch.GetTimestamp() - start) * 1000d / Stopwatch.Frequency;
                 RabbitMqMetrics.PublishDuration.Record(elapsed);
-                
+
                 _logger.LogInformation("Published message to {Exchange}/{RoutingKey}", exchange, routingKey);
                 RabbitMqMetrics.MessagesPublished.Add(1);
                 return new Result<Result>().WithStatus(ResultStatus.Success);

@@ -1,6 +1,6 @@
-using System.Threading.Channels;
-using Microsoft.Extensions.DependencyInjection;
 using Ark.Alliance.Core.Mediator.Messaging;
+using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Channels;
 
 namespace Ark.Alliance.Core.Mediator.ML;
 

@@ -1,12 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
+using Ark.Alliance.Core.Mediator.Messaging.Abstractions;
+using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Resilience;
-using OpenTelemetry.Metrics;
-using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
-using Ark.Alliance.Core;
-using Ark.Alliance.Core.Mediator.Messaging.Abstractions;
 
 namespace Ark.Alliance.Core.Mq.RabbitMq;
 

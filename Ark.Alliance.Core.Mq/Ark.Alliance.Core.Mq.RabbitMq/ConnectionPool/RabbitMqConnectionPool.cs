@@ -1,18 +1,10 @@
-using System;
-using System.Collections.Concurrent;
-using System.Threading;
-using System.Threading.Tasks;
+using Ark.Alliance.Core.Diagnostics;
+using Ark.Alliance.Core.Eventing;
+using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Resilience;
-using Ark.Alliance.Core;
-
-using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
-using Ark.Alliance.Core.Eventing;
-using Ark.Alliance.Core.Diagnostics;
-using Ark.Alliance.Core;
-
-using RabbitMQ.Client;
+using System.Collections.Concurrent;
 
 
 namespace Ark.Alliance.Core.Mq.RabbitMq;

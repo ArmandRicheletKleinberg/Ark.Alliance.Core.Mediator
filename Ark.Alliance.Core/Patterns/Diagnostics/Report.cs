@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace Ark.Alliance.Core.Diagnostics
+﻿namespace Ark.Alliance.Core.Diagnostics
 {
     /// <summary>
     /// This contains the basic information about a report that can be displayed to the user.

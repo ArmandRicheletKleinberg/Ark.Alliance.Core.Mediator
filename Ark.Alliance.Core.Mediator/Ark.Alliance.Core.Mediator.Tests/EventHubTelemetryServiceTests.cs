@@ -1,12 +1,7 @@
-using System.Threading;
-using System.Threading.Channels;
-using System.Threading.Tasks;
 using Ark.Alliance.Core.Mediator.ML;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Xunit;
 using Azure.Messaging.EventHubs;
-using System.Collections.Generic;
+using System.Threading.Channels;
+using Xunit;
 
 public class EventHubTelemetryServiceTests
 {
@@ -18,7 +13,7 @@ public class EventHubTelemetryServiceTests
         var producer = new InMemoryEventHubProducer();
         var service = new EventHubTelemetryService(channel, options, producer);
         await service.StartAsync(CancellationToken.None);
-        await channel.Writer.WriteAsync(new byte[] {1,2,3});
+        await channel.Writer.WriteAsync(new byte[] { 1, 2, 3 });
         await Task.Delay(1500);
         await service.StopAsync(CancellationToken.None);
         Assert.True(producer.Sent.Count > 0);

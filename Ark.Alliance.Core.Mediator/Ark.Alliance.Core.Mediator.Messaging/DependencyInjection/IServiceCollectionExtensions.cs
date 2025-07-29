@@ -1,13 +1,7 @@
-using System;
-using System.Reflection;
-using System.Linq;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Resilience;
 using Polly;
+using System.Reflection;
 
 namespace Ark.Alliance.Core.Mediator.Messaging;
 
@@ -150,7 +144,7 @@ public static partial class IServiceCollectionExtensions
 
         var handlerTypes = assembly.GetTypes();
         var tmp = new List<(Type iface, Type impl)>();
-        
+
         foreach (var type in handlerTypes)
         {
             if (type.IsAbstract || type.IsInterface)

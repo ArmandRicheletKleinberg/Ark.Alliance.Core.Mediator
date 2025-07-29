@@ -1,8 +1,5 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Ark.Alliance.Core.Mediator.Messaging.Abstractions;
 
@@ -51,7 +48,7 @@ public interface IBrokerOptions { }
 /// </summary>
 /// <param name="Topic">Topic or queue name.</param>
 /// <param name="Headers">Optional message headers.</param>
-public record BrokerMetadata(string Topic, IDictionary<string,string>? Headers = null);
+public record BrokerMetadata(string Topic, IDictionary<string, string>? Headers = null);
 
 /// <summary>
 /// Publisher capable of streaming items to a broker.

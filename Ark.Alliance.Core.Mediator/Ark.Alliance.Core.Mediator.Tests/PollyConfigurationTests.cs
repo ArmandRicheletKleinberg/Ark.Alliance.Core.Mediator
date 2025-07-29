@@ -1,14 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Polly;
-using Xunit;
+using Ark.Alliance.Core;
 using Ark.Alliance.Core.Mediator.IoC;
 using Ark.Alliance.Core.Mediator.Messaging;
-using Ark.Alliance.Core;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Xunit;
 
 public class PollyConfigurationTests
 {
@@ -27,11 +22,11 @@ public class PollyConfigurationTests
         services.AddArkCqrs(config, typeof(PollyConfigurationTests).Assembly);
         var provider = services.BuildServiceProvider();
 
-        var middlewares = provider.GetServices<ICommandMiddleware<TestCommand,string>>();
+        var middlewares = provider.GetServices<ICommandMiddleware<TestCommand, string>>();
         Assert.Contains(middlewares, m => m.GetType().Name.Contains("PollyCommandMiddleware"));
         var dispatcher = provider.GetRequiredService<IArkDispatcher>();
-        var result = await dispatcher.SendAsync<TestCommand,string>(new TestCommand());
-        Assert.Equal(ResultStatus.Success,result.Status);
+        var result = await dispatcher.SendAsync<TestCommand, string>(new TestCommand());
+        Assert.Equal(ResultStatus.Success, result.Status);
     }
 
     [Fact]
@@ -42,18 +37,18 @@ public class PollyConfigurationTests
         services.AddArkCqrs(config, typeof(PollyConfigurationTests).Assembly);
         var provider = services.BuildServiceProvider();
 
-        var middlewares = provider.GetServices<ICommandMiddleware<TestCommand,string>>();
+        var middlewares = provider.GetServices<ICommandMiddleware<TestCommand, string>>();
         Assert.DoesNotContain(middlewares, m => m.GetType().Name.Contains("PollyCommandMiddleware"));
     }
 
     public record TestCommand() : ICommand<string>;
 
-    public class TestCommandHandler : ICommandHandler<TestCommand,string>
+    public class TestCommandHandler : ICommandHandler<TestCommand, string>
     {
         private int _attempt;
         public Task<Result<string>> HandleAsync(TestCommand command, CancellationToken cancellationToken = default)
         {
-            if(_attempt++ < 1)
+            if (_attempt++ < 1)
                 throw new InvalidOperationException("fail");
             return Task.FromResult(Result<string>.Success.WithData("ok"));
         }

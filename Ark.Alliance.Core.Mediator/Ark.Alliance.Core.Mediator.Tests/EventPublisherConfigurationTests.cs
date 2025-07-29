@@ -1,11 +1,8 @@
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
+using Ark.Alliance.Core.Mediator.IoC;
+using Ark.Alliance.Core.Mediator.Messaging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
-using Ark.Alliance.Core.Mediator.IoC;
-using Ark.Alliance.Core.Mediator.Messaging;
 
 /// <summary>
 /// Validates event publisher selection through configuration.

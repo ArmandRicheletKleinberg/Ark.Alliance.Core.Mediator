@@ -1,11 +1,8 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Polly;
-using Ark.Alliance.Core.Mediator.Messaging;
 using Ark.Alliance.Core;
+using Ark.Alliance.Core.Mediator.Messaging;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Resilience;
+using Polly;
 using Xunit;
 
 /// <summary>

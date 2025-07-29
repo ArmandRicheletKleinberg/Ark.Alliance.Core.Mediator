@@ -1,11 +1,8 @@
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Diagnostics;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Collections.Immutable;
+using System.Diagnostics;
+using System.Text;
 
 namespace Ark.Alliance.Core.Mediator.Generators;
 
@@ -59,9 +56,9 @@ public sealed class HandlerRegistrationGenerator : UniversalIncrementalGenerator
     /// </summary>
     protected override IEnumerable<GenerationOutput> GenerateCode(GenerationInput<HandlerRegistration> input)
     {
-        #if DEBUG
+#if DEBUG
         Debug.WriteLine($"[HandlerRegistration] Generating for {input.Items.Length} handlers");
-        #endif
+#endif
         var sb = new StringBuilder();
         sb.AppendLine("using Microsoft.Extensions.DependencyInjection;");
         sb.AppendLine();

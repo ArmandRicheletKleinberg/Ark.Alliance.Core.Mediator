@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-// ReSharper disable UnusedType.Global
+﻿// ReSharper disable UnusedType.Global
 // ReSharper disable UnusedMember.Global
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable MemberCanBeProtected.Global
@@ -62,62 +59,62 @@ namespace Ark.Alliance.Core
         /// <summary>
         /// Success.
         /// </summary>
-        public static Result Success => new Result();
+        public static Result Success => new();
 
         /// <summary>
         /// Failure.
         /// </summary>
-        public static Result Failure => new Result(ResultStatus.Failure);
+        public static Result Failure => new(ResultStatus.Failure);
 
         /// <summary>
         /// An unexpected failure has occured.
         /// </summary>
-        public static Result Unexpected => new Result(ResultStatus.Unexpected);
+        public static Result Unexpected => new(ResultStatus.Unexpected);
 
         /// <summary>
         /// Unauthorized.
         /// </summary>
-        public static Result Unauthorized => new Result(ResultStatus.Unauthorized);
+        public static Result Unauthorized => new(ResultStatus.Unauthorized);
 
         /// <summary>
         /// Already.
         /// </summary>
-        public static Result Already => new Result(ResultStatus.Already);
+        public static Result Already => new(ResultStatus.Already);
 
         /// <summary>
         /// Not found.
         /// </summary>
-        public static Result NotFound => new Result(ResultStatus.NotFound);
+        public static Result NotFound => new(ResultStatus.NotFound);
 
         /// <summary>
         /// Bad pre requisites.
         /// </summary>
-        public static Result BadPrerequisites => new Result(ResultStatus.BadPrerequisites);
+        public static Result BadPrerequisites => new(ResultStatus.BadPrerequisites);
 
         /// <summary>
         /// Bad parameters are given.
         /// </summary>
-        public static Result BadParameters => new Result(ResultStatus.BadParameters);
+        public static Result BadParameters => new(ResultStatus.BadParameters);
 
         /// <summary>
         /// The method call was canceled.
         /// </summary>
-        public static Result Cancelled => new Result(ResultStatus.Cancelled);
+        public static Result Cancelled => new(ResultStatus.Cancelled);
 
         /// <summary>
         /// The method call has timed out.
         /// </summary>
-        public static Result Timeout => new Result(ResultStatus.Timeout);
+        public static Result Timeout => new(ResultStatus.Timeout);
 
         /// <summary>
         /// The operation has no connection to execute.
         /// </summary>
-        public static Result NoConnection => new Result(ResultStatus.NoConnection);
+        public static Result NoConnection => new(ResultStatus.NoConnection);
 
         /// <summary>
         /// The operation is not implemented
         /// </summary>
-        public static Result NotImplemented => new Result(ResultStatus.NotImplemented);
+        public static Result NotImplemented => new(ResultStatus.NotImplemented);
 
         #endregion Static (Shortcuts)
 
@@ -296,7 +293,7 @@ namespace Ark.Alliance.Core
         /// <returns>The same result instance in order to chain the property set.</returns>
         public Result AddReason(string reason)
         {
-            Reason = $"{reason}{(Reason != null ? $"{Environment.NewLine}{Reason}" : "") }";
+            Reason = $"{reason}{(Reason != null ? $"{Environment.NewLine}{Reason}" : "")}";
             return this;
         }
 
@@ -411,62 +408,62 @@ namespace Ark.Alliance.Core
         /// <summary>
         /// Success.
         /// </summary>
-        public new static Result<T> Success => new Result<T>();
+        public new static Result<T> Success => new();
 
         /// <summary>
         /// Failure.
         /// </summary>
-        public new static Result<T> Failure => new Result<T>(ResultStatus.Failure);
+        public new static Result<T> Failure => new(ResultStatus.Failure);
 
         /// <summary>
         /// An unexpected failure has occured.
         /// </summary>
-        public new static Result<T> Unexpected => new Result<T>(ResultStatus.Unexpected);
+        public new static Result<T> Unexpected => new(ResultStatus.Unexpected);
 
         /// <summary>
         /// Unauthorized.
         /// </summary>
-        public new static Result<T> Unauthorized => new Result<T>(ResultStatus.Unauthorized);
+        public new static Result<T> Unauthorized => new(ResultStatus.Unauthorized);
 
         /// <summary>
         /// Already.
         /// </summary>
-        public new static Result<T> Already => new Result<T>(ResultStatus.Already);
+        public new static Result<T> Already => new(ResultStatus.Already);
 
         /// <summary>
         /// Not found.
         /// </summary>
-        public new static Result<T> NotFound => new Result<T>(ResultStatus.NotFound);
+        public new static Result<T> NotFound => new(ResultStatus.NotFound);
 
         /// <summary>
         /// Bad pre requisites.
         /// </summary>
-        public new static Result<T> BadPrerequisites => new Result<T>(ResultStatus.BadPrerequisites);
+        public new static Result<T> BadPrerequisites => new(ResultStatus.BadPrerequisites);
 
         /// <summary>
         /// Bad parameters are given.
         /// </summary>
-        public new static Result<T> BadParameters => new Result<T>(ResultStatus.BadParameters);
+        public new static Result<T> BadParameters => new(ResultStatus.BadParameters);
 
         /// <summary>
         /// The method call was canceled.
         /// </summary>
-        public new static Result<T> Cancelled => new Result<T>(ResultStatus.Cancelled);
+        public new static Result<T> Cancelled => new(ResultStatus.Cancelled);
 
         /// <summary>
         /// The method call has timed out.
         /// </summary>
-        public new static Result<T> Timeout => new Result<T>(ResultStatus.Timeout);
+        public new static Result<T> Timeout => new(ResultStatus.Timeout);
 
         /// <summary>
         /// The operation has no connection to execute.
         /// </summary>
-        public new static Result<T> NoConnection => new Result<T>(ResultStatus.NoConnection);
+        public new static Result<T> NoConnection => new(ResultStatus.NoConnection);
 
         /// <summary>
         /// The operation is not implemented
         /// </summary>
-        public new static Result<T> NotImplemented => new Result<T>(ResultStatus.NotImplemented);
+        public new static Result<T> NotImplemented => new(ResultStatus.NotImplemented);
 
         #endregion Static (Shortcuts)
 
@@ -568,7 +565,7 @@ namespace Ark.Alliance.Core
             Reason = reason;
             return this;
         }
-        
+
         /// <summary>
         /// Adds the reason to the potentially existed reason of this result.
         /// The new reason will be inserted in from the old reason.
@@ -577,7 +574,7 @@ namespace Ark.Alliance.Core
         /// <returns>The same result instance in order to chain the property set.</returns>
         public new Result<T> AddReason(string reason)
         {
-            Reason = $"{reason}{(Reason != null ? $"{Environment.NewLine}{Reason}" : "") }";
+            Reason = $"{reason}{(Reason != null ? $"{Environment.NewLine}{Reason}" : "")}";
             return this;
         }
 

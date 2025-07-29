@@ -1,8 +1,5 @@
-using System.IO;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Ark.Alliance.Core.Mediator.Messaging;
+using System.Text;
 using Xunit;
 
 /// <summary>

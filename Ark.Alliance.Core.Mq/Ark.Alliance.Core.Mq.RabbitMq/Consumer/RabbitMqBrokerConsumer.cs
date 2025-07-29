@@ -1,8 +1,4 @@
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using Ark.Alliance.Core.Mediator.Messaging.Abstractions;
-using Ark.Alliance.Core;
 using Microsoft.Extensions.Options;
 
 namespace Ark.Alliance.Core.Mq.RabbitMq;

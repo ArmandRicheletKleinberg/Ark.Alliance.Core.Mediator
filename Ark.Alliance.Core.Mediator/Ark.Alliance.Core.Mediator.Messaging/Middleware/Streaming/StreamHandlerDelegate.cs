@@ -1,7 +1,6 @@
 namespace Ark.Alliance.Core.Mediator.Messaging;
 
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Delegate used to invoke the next element in a streaming pipeline.

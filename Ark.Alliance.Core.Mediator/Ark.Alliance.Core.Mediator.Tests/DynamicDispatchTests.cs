@@ -1,10 +1,7 @@
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Threading.Tasks;
-using Ark.Alliance.Core.Mediator.Messaging;
 using Ark.Alliance.Core;
+using Ark.Alliance.Core.Mediator.Messaging;
 using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.CompilerServices;
 using Xunit;
 
 /// <summary>

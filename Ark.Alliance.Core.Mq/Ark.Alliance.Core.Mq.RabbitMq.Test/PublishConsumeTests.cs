@@ -1,14 +1,9 @@
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Xunit;
+using Ark.Alliance.Core.Mq.RabbitMq;
 using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Containers;
-using Ark.Alliance.Core.Mq.RabbitMq;
-using Microsoft.Extensions.Logging;
-using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
-using System.Threading;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Resilience;
-
+using Xunit;
 using Xunit.Abstractions;
 
 public class PublishConsumeTests : IAsyncLifetime

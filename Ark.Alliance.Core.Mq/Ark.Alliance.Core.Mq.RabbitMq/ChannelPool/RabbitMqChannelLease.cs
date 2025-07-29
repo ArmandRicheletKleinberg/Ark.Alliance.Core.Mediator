@@ -1,8 +1,3 @@
-using System;
-using System.Threading.Tasks;
-using RabbitMQ.Client;
-
-
 namespace Ark.Alliance.Core.Mq.RabbitMq;
 
 /// <summary>

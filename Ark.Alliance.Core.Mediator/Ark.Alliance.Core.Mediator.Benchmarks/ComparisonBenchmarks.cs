@@ -1,12 +1,10 @@
+using Ark.Alliance.Core.Mediator.Generators.Hybrid;
+using Ark.Alliance.Core.Mediator.Messaging;
+using BenchmarkDotNet.Attributes;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using System.Threading.Tasks;
-using BenchmarkDotNet.Attributes;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using MediatR;
-using Ark.Alliance.Core.Mediator.Messaging;
-using Ark.Alliance.Core.Mediator.IoC;
-using Ark.Alliance.Core.Mediator.Generators.Hybrid;
 
 namespace Ark.Alliance.Core.Mediator.Benchmarks;
 

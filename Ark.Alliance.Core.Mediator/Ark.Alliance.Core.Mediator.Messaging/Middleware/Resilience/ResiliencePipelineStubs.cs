@@ -1,6 +1,3 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Ark.Alliance.Core;
 
 namespace Microsoft.Extensions.Resilience;
@@ -76,29 +73,29 @@ public class ResiliencePipeline<TResult>(int retryAttempts = 3)
     }
 }
 
+/// <summary>
+/// Builder used to configure and create <see cref="ResiliencePipeline{TResult}"/> instances.
+/// </summary>
+public class ResiliencePipelineBuilder<TResult>
+{
+    private int _retryAttempts;
     /// <summary>
-    /// Builder used to configure and create <see cref="ResiliencePipeline{TResult}"/> instances.
+    /// Adds simple retry behavior to the pipeline being built.
     /// </summary>
-    public class ResiliencePipelineBuilder<TResult>
+    /// <param name="configure">Action configuring retry options.</param>
+    /// <returns>The current builder instance.</returns>
+    public ResiliencePipelineBuilder<TResult> AddRetry(Action<RetryOptions> configure)
     {
-        private int _retryAttempts;
-        /// <summary>
-        /// Adds simple retry behavior to the pipeline being built.
-        /// </summary>
-        /// <param name="configure">Action configuring retry options.</param>
-        /// <returns>The current builder instance.</returns>
-        public ResiliencePipelineBuilder<TResult> AddRetry(Action<RetryOptions> configure)
-        {
-            var opts = new RetryOptions();
-            configure(opts);
-            _retryAttempts = opts.MaxRetryAttempts;
-            return this;
-        }
-
-        /// <summary>
-        /// Builds the configured <see cref="ResiliencePipeline{TResult}"/>.
-        /// </summary>
-        /// <returns>A new pipeline instance.</returns>
-        public ResiliencePipeline<TResult> Build() => new(_retryAttempts);
+        var opts = new RetryOptions();
+        configure(opts);
+        _retryAttempts = opts.MaxRetryAttempts;
+        return this;
     }
+
+    /// <summary>
+    /// Builds the configured <see cref="ResiliencePipeline{TResult}"/>.
+    /// </summary>
+    /// <returns>A new pipeline instance.</returns>
+    public ResiliencePipeline<TResult> Build() => new(_retryAttempts);
+}
 

@@ -1,13 +1,8 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
+using Ark.Alliance.Core.Eventing;
+using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Resilience;
-using Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
-using Ark.Alliance.Core.Eventing;
-using Ark.Alliance.Core;
-using RabbitMQ.Client;
 
 
 namespace Ark.Alliance.Core.Mq.RabbitMq;

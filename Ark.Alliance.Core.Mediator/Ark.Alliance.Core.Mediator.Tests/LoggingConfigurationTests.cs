@@ -1,14 +1,9 @@
-using System;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Xunit;
+using Ark.Alliance.Core;
 using Ark.Alliance.Core.Mediator.IoC;
 using Ark.Alliance.Core.Mediator.Messaging;
-using Ark.Alliance.Core;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Xunit;
 
 /// <summary>
 /// Tests that <see cref="ServiceCollectionExtensions"/> honors the

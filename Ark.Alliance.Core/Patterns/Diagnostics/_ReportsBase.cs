@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Dynamic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 
 namespace Ark.Alliance.Core.Diagnostics
@@ -31,16 +28,16 @@ namespace Ark.Alliance.Core.Diagnostics
                 .Where(m => m.ReturnType.GenericTypeArguments?.Length > 0)
                 .Where(m => typeof(Result).IsAssignableFrom(m.ReturnType.GenericTypeArguments[0]))
                 .Where(m => m.ReturnType.GenericTypeArguments[0].GenericTypeArguments?.Length == 1)
-                .ToDictionary(m => m.Name, m =>  new Report
+                .ToDictionary(m => m.Name, m => new Report
                 {
                     Key = m.Name,
                     Description = m.GetCustomAttribute<DescriptionAttribute>()?.Description,
-                    GetFunction = (async() =>
+                    GetFunction = (async () =>
                     {
                         var task = (Task)m.Invoke(this, new object[] { });
                         await task.ConfigureAwait(false);
-                        var result = (Result) ((dynamic) task).Result;
-                        var data = ((dynamic) result).Data;
+                        var result = (Result)((dynamic)task).Result;
+                        var data = ((dynamic)result).Data;
                         return new Result<object>(result).WithData(data);
                     })
                 });
@@ -56,7 +53,7 @@ namespace Ark.Alliance.Core.Diagnostics
         [Description("Gets the JSON string of the whole application configuration.")]
         public Task<Result<ExpandoObject>> ApplicationConfiguration()
             => Task.Run(() => new Result<ExpandoObject>(new AppSettingsRepository().GetFullConfigurationJsonObject()));
-        
+
         #endregion Methods (Public)
     }
 }
