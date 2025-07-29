@@ -1,11 +1,8 @@
-using System.Threading;
-using System.Threading.Channels;
-using System.Threading.Tasks;
+using Ark.Alliance.Core;
 using Ark.Alliance.Core.Mediator.Messaging;
 using Ark.Alliance.Core.Mediator.ML;
-using Ark.Alliance.Core.Mediator.IoC;
-using Ark.Alliance.Core;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Channels;
 using Xunit;
 
 public class MlCommandMiddlewareTests

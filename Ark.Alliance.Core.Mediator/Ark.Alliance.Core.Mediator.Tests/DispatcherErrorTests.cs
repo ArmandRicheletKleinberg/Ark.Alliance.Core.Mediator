@@ -1,9 +1,6 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
+using Ark.Alliance.Core.Mediator.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
-using Ark.Alliance.Core.Mediator.Messaging;
 
 /// <summary>
 /// Unit tests validating error conditions of <see cref="IArkDispatcher"/>.

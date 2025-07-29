@@ -1,12 +1,10 @@
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Ark.Alliance.Core;
-using Ark.Alliance.Core.Mediator.Messaging;
-using Ark.Alliance.Core.Mediator.IoC;
 using Ark.Alliance.Core.Mediator.Generators.Hybrid;
+using Ark.Alliance.Core.Mediator.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using StreamingLoggingSample;
+using System.Runtime.CompilerServices;
 
 /// <summary>
 /// Sample demonstrating logging and streaming features of Ark.Alliance.Core.Mediator.
@@ -46,31 +44,31 @@ catch (OperationCanceledException)
 
 namespace StreamingLoggingSample
 {
-public record PingCommand() : ICommand<string>;
+    public record PingCommand() : ICommand<string>;
 
-public class PingCommandHandler : ICommandHandler<PingCommand, string>
-{
-    public Task<Result<string>> HandleAsync(PingCommand command, CancellationToken cancellationToken = default)
+    public class PingCommandHandler : ICommandHandler<PingCommand, string>
     {
-        Console.WriteLine("Handling PingCommand");
-        return Task.FromResult(Result<string>.Success.WithData("Pong"));
-    }
-}
-
-public record NumberStreamRequest(int Count) : IStreamRequest<int>;
-
-public class NumberStreamHandler : IStreamRequestHandler<NumberStreamRequest, int>
-{
-    public async IAsyncEnumerable<int> HandleAsync(NumberStreamRequest req, [EnumeratorCancellation] CancellationToken ct)
-    {
-        for (var i = 1; i <= req.Count; i++)
+        public Task<Result<string>> HandleAsync(PingCommand command, CancellationToken cancellationToken = default)
         {
-            ct.ThrowIfCancellationRequested();
-            yield return i;
-            await Task.Delay(100, ct);
+            Console.WriteLine("Handling PingCommand");
+            return Task.FromResult(Result<string>.Success.WithData("Pong"));
         }
     }
-}
+
+    public record NumberStreamRequest(int Count) : IStreamRequest<int>;
+
+    public class NumberStreamHandler : IStreamRequestHandler<NumberStreamRequest, int>
+    {
+        public async IAsyncEnumerable<int> HandleAsync(NumberStreamRequest req, [EnumeratorCancellation] CancellationToken ct)
+        {
+            for (var i = 1; i <= req.Count; i++)
+            {
+                ct.ThrowIfCancellationRequested();
+                yield return i;
+                await Task.Delay(100, ct);
+            }
+        }
+    }
 
 }
 

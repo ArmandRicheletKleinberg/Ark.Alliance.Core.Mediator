@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.Extensions.Logging;
-
-namespace Ark.Alliance.Core
+﻿namespace Ark.Alliance.Core
 {
     public class LogDto
     {

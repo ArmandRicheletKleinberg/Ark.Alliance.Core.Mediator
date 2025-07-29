@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Running;
-using System.Collections.Generic;
 using System.Linq;
 namespace Ark.Alliance.Core.Mediator.Benchmarks;
 

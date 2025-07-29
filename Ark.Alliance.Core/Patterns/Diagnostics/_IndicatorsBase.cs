@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Ark.Alliance.Core.Diagnostics
+﻿namespace Ark.Alliance.Core.Diagnostics
 {
     /// <summary>
     /// This class is the base class used to define the indicators used in diagnostics.

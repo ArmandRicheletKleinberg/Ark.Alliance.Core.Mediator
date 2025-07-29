@@ -1,7 +1,7 @@
-using System.Reflection;
 using Ark.Alliance.Core.Mediator.Generators.Hybrid;
 using Ark.Alliance.Core.Mediator.Generators.Runtime;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 using Xunit;
 
 public class HybridGenerationTests

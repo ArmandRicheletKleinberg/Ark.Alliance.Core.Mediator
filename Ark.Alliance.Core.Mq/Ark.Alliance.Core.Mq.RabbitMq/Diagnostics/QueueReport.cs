@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;
 
 /// <summary>

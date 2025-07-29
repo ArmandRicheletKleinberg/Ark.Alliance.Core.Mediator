@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Ark.Alliance.Core
+﻿namespace Ark.Alliance.Core
 {
     /// <summary>
     /// The information about the application diagnostic.

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ark.Alliance.Core
+﻿namespace Ark.Alliance.Core
 {
     /// <inheritdoc />
     /// <summary>
@@ -16,7 +14,7 @@ namespace Ark.Alliance.Core
         /// <param name="message">The message of the Exception if any.</param>
         /// <param name="innerException">The inner Exception if any.</param>
         public ResultException(string message = null, Exception innerException = null)
-            : base (message, innerException)
+            : base(message, innerException)
         { }
 
         #endregion Constructors

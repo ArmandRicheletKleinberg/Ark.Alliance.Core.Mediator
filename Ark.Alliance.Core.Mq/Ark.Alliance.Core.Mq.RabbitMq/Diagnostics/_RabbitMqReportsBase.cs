@@ -1,8 +1,3 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-using Microsoft.Extensions.Logging;
-using Ark.Alliance.Core;
 using Ark.Alliance.Core.Diagnostics;
 
 namespace Ark.Alliance.Core.Mq.RabbitMq.Diagnostics;

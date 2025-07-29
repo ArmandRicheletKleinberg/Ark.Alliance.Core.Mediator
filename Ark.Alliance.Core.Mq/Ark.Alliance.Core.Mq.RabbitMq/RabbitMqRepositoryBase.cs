@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using RabbitMQ.Client;
-
-using Ark.Alliance.Core;
 using Microsoft.Extensions.Logging;
 
 namespace Ark.Alliance.Core.Mq.RabbitMq;

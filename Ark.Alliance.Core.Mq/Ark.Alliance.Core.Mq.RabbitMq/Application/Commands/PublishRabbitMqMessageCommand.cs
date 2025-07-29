@@ -1,6 +1,3 @@
-
-
-using Ark.Alliance.Core;
 using Ark.Alliance.Core.Mediator.Messaging;
 
 namespace Ark.Alliance.Core.Mq.RabbitMq;

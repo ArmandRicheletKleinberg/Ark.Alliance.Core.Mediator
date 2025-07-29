@@ -1,12 +1,7 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Channels;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Diagnostics;
 using Ark.Alliance.Core.Mediator.Messaging.Abstractions;
 using Ark.Alliance.Core.Mediator.Messaging.Streaming;
+using System.Diagnostics;
+using System.Threading.Channels;
 using Xunit;
 
 /// <summary>

@@ -1,10 +1,7 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
 using Ark.Alliance.Core;
-using Xunit;
 using Ark.Alliance.Core.Mediator.Messaging;
+using Microsoft.Extensions.DependencyInjection;
+using Xunit;
 
 /// <summary>
 /// Verifies custom exception middleware handling behaviors.

@@ -2,7 +2,7 @@
 
 namespace Ark.Alliance.Core
 {
-    
+
     /// <summary>
     /// This is the base class for all app settings sections class.
     /// It adds some useful helpers for the app settings like cloning.

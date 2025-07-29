@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Ark.Alliance.Core
+﻿namespace Ark.Alliance.Core
 {
     /// <summary>
     /// The information on a _logs table in the database.
@@ -18,7 +16,7 @@ namespace Ark.Alliance.Core
         /// The categories of the logs in this table.
         /// </summary>
         public string[] Categories { get; set; }
-        
+
         #endregion Properties (Public)
     }
 }

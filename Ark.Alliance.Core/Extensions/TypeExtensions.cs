@@ -1,5 +1,3 @@
-using System;
-
 namespace Ark.Alliance.Core;
 
 /// <summary>

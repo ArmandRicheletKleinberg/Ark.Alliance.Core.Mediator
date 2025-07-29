@@ -1,7 +1,5 @@
-using System.Threading;
-using System.Threading.Tasks;
-using Ark.Alliance.Core.Mediator.Messaging;
 using Ark.Alliance.Core;
+using Ark.Alliance.Core.Mediator.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 

@@ -1,5 +1,5 @@
-using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace Ark.Alliance.Core.Mediator.Messaging;
 

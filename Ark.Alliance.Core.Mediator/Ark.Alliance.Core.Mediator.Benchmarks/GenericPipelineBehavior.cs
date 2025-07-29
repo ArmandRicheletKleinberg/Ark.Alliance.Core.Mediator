@@ -1,7 +1,7 @@
+using MediatR;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
 
 namespace Ark.Alliance.Core.Mediator.Benchmarks
 {

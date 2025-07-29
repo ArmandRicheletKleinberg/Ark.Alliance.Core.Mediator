@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.Configuration;
 using System.Dynamic;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json.Linq;
-using System.Linq;
-using System.Collections.Specialized;
 
 namespace Ark.Alliance.Core
 
@@ -19,7 +14,7 @@ namespace Ark.Alliance.Core
         /// <summary>
         /// The sections are kept in static memory for performance purpose.
         /// </summary>
-        private static readonly Dictionary<Type, AppSettingsSectionBase> Sections = new Dictionary<Type, AppSettingsSectionBase>();
+        private static readonly Dictionary<Type, AppSettingsSectionBase> Sections = new();
 
         /// <summary>
         /// The app configuration set by the service collection extension.
@@ -47,10 +42,10 @@ namespace Ark.Alliance.Core
 
             section = typeof(TSection).New<TSection>();
             if (section.SectionPath.IsNullOrEmpty())
-                throw new Exception($"The section path must be defined for all sections. { sectionType }");
+                throw new Exception($"The section path must be defined for all sections. {sectionType}");
             section = section.Deserialize(Configuration) as TSection;
             if (section == null)
-                throw new Exception($"The section could not be deserialized correctly, check your deserialization code. { sectionType }");
+                throw new Exception($"The section could not be deserialized correctly, check your deserialization code. {sectionType}");
 
             Sections.Add(sectionType, section);
             return section;

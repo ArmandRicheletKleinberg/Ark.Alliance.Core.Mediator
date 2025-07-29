@@ -1,9 +1,5 @@
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Threading;
-using System.Runtime.CompilerServices;
-using Microsoft.Extensions.DependencyInjection;
 using Ark.Alliance.Core.Mediator.Messaging.Abstractions;
+using System.Runtime.CompilerServices;
 
 namespace Ark.Alliance.Core.Mediator.Messaging.Streaming;
 

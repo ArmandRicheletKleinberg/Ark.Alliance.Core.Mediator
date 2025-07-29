@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Ark.Alliance.Core.Mediator.Generators;
 using Xunit;
 

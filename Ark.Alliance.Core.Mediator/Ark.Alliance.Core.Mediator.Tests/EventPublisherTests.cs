@@ -1,8 +1,5 @@
-using System.Diagnostics;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using Ark.Alliance.Core.Mediator.Messaging;
+using System.Diagnostics;
 using Xunit;
 
 namespace Ark.Alliance.Core.Mediator.Messaging.Tests;

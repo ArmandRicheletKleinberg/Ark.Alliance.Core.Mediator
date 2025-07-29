@@ -1,6 +1,6 @@
-using System.Threading.Channels;
 using Azure.Messaging.EventHubs;
 using Microsoft.Extensions.Hosting;
+using System.Threading.Channels;
 
 namespace Ark.Alliance.Core.Mediator.ML;
 

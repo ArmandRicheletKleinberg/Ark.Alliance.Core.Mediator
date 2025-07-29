@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 
 namespace Ark.Alliance.Core.Diagnostics
@@ -76,8 +75,8 @@ namespace Ark.Alliance.Core.Diagnostics
             Key = key;
             Label = label ?? key;
             Value = initialValue;
-            base.CheckFunction = checkFunction != null 
-                ? new Func<object, IndicatorStatusEnum>(value => checkFunction((TValue)value)) 
+            base.CheckFunction = checkFunction != null
+                ? new Func<object, IndicatorStatusEnum>(value => checkFunction((TValue)value))
                 : value => IndicatorStatusEnum.Success;
         }
 
@@ -90,7 +89,7 @@ namespace Ark.Alliance.Core.Diagnostics
         /// </summary>
         public new TValue Value
         {
-            get => (TValue) base.Value;
+            get => (TValue)base.Value;
             internal set => base.Value = value;
         }
 

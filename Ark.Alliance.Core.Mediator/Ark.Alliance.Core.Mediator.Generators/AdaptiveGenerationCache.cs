@@ -1,11 +1,5 @@
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
 using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
-#pragma warning disable RS1035
 
 namespace Ark.Alliance.Core.Mediator.Generators;
 
@@ -221,4 +215,3 @@ public record AdaptiveCacheConfiguration(
     string? FilePath = null,
     TimeSpan? ExpirationTime = null,
     int MaxMemoryEntries = 1000);
-#pragma warning restore RS1035

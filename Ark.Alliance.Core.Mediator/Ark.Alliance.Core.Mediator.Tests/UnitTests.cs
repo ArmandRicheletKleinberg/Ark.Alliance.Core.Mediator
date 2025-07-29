@@ -1,7 +1,3 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Ark.Alliance.Core;
 using Xunit;
 
@@ -62,7 +58,7 @@ public class UnitTests
 
     public static object[][] ValueData() => new[]
     {
-        new object[] { new object(), false },
+        new object[] { new(), false },
         new object[] { "", false },
         new object[] { "()", false },
         new object[] { null!, false },

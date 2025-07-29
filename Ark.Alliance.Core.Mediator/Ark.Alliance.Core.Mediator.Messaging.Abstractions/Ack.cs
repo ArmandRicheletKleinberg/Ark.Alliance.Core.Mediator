@@ -1,5 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-
 namespace Ark.Alliance.Core.Mediator.Messaging.Abstractions;
 
 /// <summary>
