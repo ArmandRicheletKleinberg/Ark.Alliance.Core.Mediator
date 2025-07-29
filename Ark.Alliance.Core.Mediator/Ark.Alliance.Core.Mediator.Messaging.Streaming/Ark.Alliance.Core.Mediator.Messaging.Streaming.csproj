@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <LangVersion>latest</LangVersion>
+    <Authors>Armand Richelet-Kleinberg</Authors>
+    <Company>M2H.IO</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>In-memory streaming utilities and broker bridges for Ark Messaging.</Description>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Ark.Alliance.Core.Mediator.Messaging.Abstractions/Ark.Alliance.Core.Mediator.Messaging.Abstractions.csproj" />
+    <ProjectReference Include="../Ark.Alliance.Core.Mediator.Messaging/Ark.Alliance.Core.Mediator.Messaging.csproj" />
+  </ItemGroup>
+</Project>

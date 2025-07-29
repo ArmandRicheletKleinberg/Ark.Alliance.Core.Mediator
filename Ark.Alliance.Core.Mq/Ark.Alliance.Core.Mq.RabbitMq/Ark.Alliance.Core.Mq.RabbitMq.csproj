@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <LangVersion>latest</LangVersion>
+    <Authors>Armand Richelet-Kleinberg</Authors>
+    <Company>M2H.IO</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>RabbitMQ integration utilities for Ark ecosystem.</Description>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  <ItemGroup>
+   
+   
+    <!--<PackageReference Include="Microsoft.Bcl.TimeProvider" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.6" />
+    <PackageReference Include="System.IO.Pipelines" Version="9.0.6" />
+    <PackageReference Include="System.Threading.RateLimiting" Version="9.0.6" />-->
+    <PackageReference Include="Microsoft.Extensions.Resilience" Version="9.6.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
+    <PackageReference Include="OpenTelemetry" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ark.Alliance.Core.Mediator\Ark.Alliance.Core.Mediator.Messaging.Abstractions\Ark.Alliance.Core.Mediator.Messaging.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Ark.Alliance.Core.Mediator\Ark.Alliance.Core.Mediator.Messaging\Ark.Alliance.Core.Mediator.Messaging.csproj" />
+  </ItemGroup>
+ 
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+</Project>
